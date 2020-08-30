@@ -1,8 +1,10 @@
 package com.lyh.personal.demo.design.proxy;
 
-public class Tank {
+public class Tank implements Moveable{
 
-    public  void move(){}
+    @Override
+    public  void move(){
+        System.out.println("tank moving...");
+    }
 
-    public static void t(){}
 }
