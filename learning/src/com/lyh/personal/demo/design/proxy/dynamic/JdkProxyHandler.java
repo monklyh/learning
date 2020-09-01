@@ -32,11 +32,14 @@ public class JdkProxyHandler implements InvocationHandler {
     }
 
     public static void main(String[] args) {
+        // 保存生成的代理类，例如：$Proxy1.class
+        System.getProperties().setProperty("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
         Moveable tank = new Tank();
         JdkProxyHandler tankProxyHandler = new JdkProxyHandler(tank);
         Moveable tankProxy = (Moveable) Proxy.newProxyInstance(tank.getClass().getClassLoader(),
                 tank.getClass().getInterfaces(), tankProxyHandler);
         tankProxy.move();
+        System.out.println("tankProxy=" + tankProxy);
 
         Call call = new Caller();
         JdkProxyHandler callerHandler = new JdkProxyHandler(call);
@@ -44,6 +47,7 @@ public class JdkProxyHandler implements InvocationHandler {
                 call.getClass().getInterfaces(), callerHandler);
         callProxy.call();
         callProxy.recviced("tank copied...");
+        System.out.println("callProxy=" + callProxy);
     }
 
 }
