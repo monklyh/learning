@@ -8,19 +8,19 @@ import net.sf.cglib.proxy.MethodProxy;
 import java.lang.reflect.Method;
 
 /**
- * CGLib ÊÇµÚÈı·½Àà¿â¹¤¾ß£¬Ëü¶¯Ì¬Éú³ÉÒ»¸ö±»´úÀíÀàµÄ×ÓÀà£¬
- * ×ÓÀàÖØĞ´±»´úÀíµÄÀàµÄËùÓĞ²»ÊÇfinalµÄ·½·¨¡£
- * ÔÚ×ÓÀàÖĞ²ÉÓÃ·½·¨À¹½ØµÄ¼¼ÊõÀ¹½ØËùÓĞ¸¸Àà·½·¨µÄµ÷ÓÃ£¬Ë³ÊÆÖ¯ÈëºáÇĞÂß¼­¡£
+ * CGLib æ˜¯ç¬¬ä¸‰æ–¹ç±»åº“å·¥å…·ï¼Œå®ƒåŠ¨æ€ç”Ÿæˆä¸€ä¸ªè¢«ä»£ç†ç±»çš„å­ç±»ï¼Œ
+ * å­ç±»é‡å†™è¢«ä»£ç†çš„ç±»çš„æ‰€æœ‰ä¸æ˜¯finalçš„æ–¹æ³•ã€‚
+ * åœ¨å­ç±»ä¸­é‡‡ç”¨æ–¹æ³•æ‹¦æˆªçš„æŠ€æœ¯æ‹¦æˆªæ‰€æœ‰çˆ¶ç±»æ–¹æ³•çš„è°ƒç”¨ï¼Œé¡ºåŠ¿ç»‡å…¥æ¨ªåˆ‡é€»è¾‘ã€‚
  */
 public class CGLibProxy {
 
     public static void main(String[] args) {
-        // ±£´æÉú³ÉµÄ´úÀíÀà
+        // ä¿å­˜ç”Ÿæˆçš„ä»£ç†ç±»
         System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "learning/src/com/lyh/personal/demo/design/proxy/dynamic/cgligClass");
         Enhancer enhancer = new Enhancer();
-        //¼Ì³Ğ±»´úÀíÀà
+        //ç»§æ‰¿è¢«ä»£ç†ç±»
         enhancer.setSuperclass(Caller.class);
-        //ÉèÖÃ»Øµ÷£¬Ê¹ÓÃÀ¹½ØÆ÷£ºÊµÏÖMethodInterceptor½Ó¿ÚÉú³É·½·¨À¹½ØÆ÷
+        //è®¾ç½®å›è°ƒï¼Œä½¿ç”¨æ‹¦æˆªå™¨ï¼šå®ç°MethodInterceptoræ¥å£ç”Ÿæˆæ–¹æ³•æ‹¦æˆªå™¨
         enhancer.setCallback(new MethodInterceptor(){
             @Override
             public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
@@ -30,9 +30,9 @@ public class CGLibProxy {
                 return object;
             }
         });
-        //ÉèÖÃ´úÀíÀà¶ÔÏó
+        //è®¾ç½®ä»£ç†ç±»å¯¹è±¡
         Caller callerProxy = (Caller) enhancer.create();
-        //ÔÚµ÷ÓÃ´úÀíÀàÖĞ·½·¨Ê±»á±»ÎÒÃÇÊµÏÖµÄ·½·¨À¹½ØÆ÷½øĞĞÀ¹½Ø
+        //åœ¨è°ƒç”¨ä»£ç†ç±»ä¸­æ–¹æ³•æ—¶ä¼šè¢«æˆ‘ä»¬å®ç°çš„æ–¹æ³•æ‹¦æˆªå™¨è¿›è¡Œæ‹¦æˆª
         callerProxy.call();
         callerProxy.recviced("the message has copied...");
     }

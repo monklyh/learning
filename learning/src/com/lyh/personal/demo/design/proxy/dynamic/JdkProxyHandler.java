@@ -8,13 +8,13 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * jdk Ìá¹©µÄ¶¯Ì¬´úÀí»úÖÆ£¨Ê¹ÓÃ·´Éä»úÖÆÊµÏÖ£¬¶¯Ì¬Éú³É´úÀíµÄ×Ö½ÚÂëÎÄ¼ş£¬ÔÙ½âÎöËüÉú³Éclassµ½ÄÚ´æ£©
- * ²Î¿¼½â¶Á£ºhttps://www.jianshu.com/p/9bcac608c714
- * ¼òµ¥À´Ëµ£ºĞèÒªÎ¯ÍĞ´úÀíÖ´ĞĞµÄÂß¼­£¬
- * ĞèÒªÓÃÒ»¸öÊµÏÖÁËInvocationHandler½Ó¿ÚµÄÀàÀ´ÊµÏÖ£»
- * Õâ¸öhandlerÀàµÄÉú³É´úÀíÊµÀıµÄÊ±ºò£¬
- * ±»´úÀíÀàÒªÇó±ØĞèÊµÏÖÒ»¸ö½Ó¿Ú£¨Éú³ÉµÄ´úÀíÊµÀıÖ»ÄÜµ÷¸Ã½Ó¿ÚµÄ·½·¨£©£¬
- * Éú³ÉµÄ´úÀíÖĞ£¬ËùÓĞÖØĞ´µÄ½Ó¿Ú·½·¨¶¼»á±»¼ÓÈëÎ¯ÍĞÖ´ĞĞµÄÂß¼­£»
+ * jdk æä¾›çš„åŠ¨æ€ä»£ç†æœºåˆ¶ï¼ˆä½¿ç”¨åå°„æœºåˆ¶å®ç°ï¼ŒåŠ¨æ€ç”Ÿæˆä»£ç†çš„å­—èŠ‚ç æ–‡ä»¶ï¼Œå†è§£æå®ƒç”Ÿæˆclassåˆ°å†…å­˜ï¼‰
+ * å‚è€ƒè§£è¯»ï¼šhttps://www.jianshu.com/p/9bcac608c714
+ * ç®€å•æ¥è¯´ï¼šéœ€è¦å§”æ‰˜ä»£ç†æ‰§è¡Œçš„é€»è¾‘ï¼Œ
+ * éœ€è¦ç”¨ä¸€ä¸ªå®ç°äº†InvocationHandleræ¥å£çš„ç±»æ¥å®ç°ï¼›
+ * è¿™ä¸ªhandlerç±»çš„ç”Ÿæˆä»£ç†å®ä¾‹çš„æ—¶å€™ï¼Œ
+ * è¢«ä»£ç†ç±»è¦æ±‚å¿…éœ€å®ç°ä¸€ä¸ªæ¥å£ï¼ˆç”Ÿæˆçš„ä»£ç†å®ä¾‹åªèƒ½è°ƒè¯¥æ¥å£çš„æ–¹æ³•ï¼‰ï¼Œ
+ * ç”Ÿæˆçš„ä»£ç†ä¸­ï¼Œæ‰€æœ‰é‡å†™çš„æ¥å£æ–¹æ³•éƒ½ä¼šè¢«åŠ å…¥å§”æ‰˜æ‰§è¡Œçš„é€»è¾‘ï¼›
  */
 public class JdkProxyHandler implements InvocationHandler {
 
@@ -32,7 +32,7 @@ public class JdkProxyHandler implements InvocationHandler {
     }
 
     public static void main(String[] args) {
-        // ±£´æÉú³ÉµÄ´úÀíÀà£¬ÀıÈç£º$Proxy1.class
+        // ä¿å­˜ç”Ÿæˆçš„ä»£ç†ç±»ï¼Œä¾‹å¦‚ï¼š$Proxy1.class
         System.getProperties().setProperty("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
         Moveable tank = new Tank();
         JdkProxyHandler tankProxyHandler = new JdkProxyHandler(tank);

@@ -8,20 +8,20 @@ import java.util.concurrent.Executors;
 public class BlockingQueueTest {
 
     /**
-     ¶¨Òå×°Æ»¹ûµÄÀº×Ó
+     å®šä¹‰è£…è‹¹æœçš„ç¯®å­
      */
     public static class Basket{
-        // Àº×Ó£¬ÄÜ¹»ÈİÄÉ3¸öÆ»¹û
+        // ç¯®å­ï¼Œèƒ½å¤Ÿå®¹çº³3ä¸ªè‹¹æœ
         BlockingQueue<String> basket = new ArrayBlockingQueue<String>(3);
 
-        // Éú²úÆ»¹û£¬·ÅÈëÀº×Ó
+        // ç”Ÿäº§è‹¹æœï¼Œæ”¾å…¥ç¯®å­
         public void produce() throws InterruptedException{
-            // put·½·¨·ÅÈëÒ»¸öÆ»¹û£¬ÈôbasketÂúÁË£¬µÈµ½basketÓĞÎ»ÖÃ
+            // putæ–¹æ³•æ”¾å…¥ä¸€ä¸ªè‹¹æœï¼Œè‹¥basketæ»¡äº†ï¼Œç­‰åˆ°basketæœ‰ä½ç½®
             basket.put("An apple");
         }
-        // Ïû·ÑÆ»¹û£¬´ÓÀº×ÓÖĞÈ¡×ß
+        // æ¶ˆè´¹è‹¹æœï¼Œä»ç¯®å­ä¸­å–èµ°
         public String consume() throws InterruptedException{
-            // get·½·¨È¡³öÒ»¸öÆ»¹û£¬ÈôbasketÎª¿Õ£¬µÈµ½basketÓĞÆ»¹ûÎªÖ¹
+            // getæ–¹æ³•å–å‡ºä¸€ä¸ªè‹¹æœï¼Œè‹¥basketä¸ºç©ºï¼Œç­‰åˆ°basketæœ‰è‹¹æœä¸ºæ­¢
             String apple = basket.take();
             return apple;
         }
@@ -31,44 +31,44 @@ public class BlockingQueueTest {
         }
 
     }
-    //¡¡²âÊÔ·½·¨
+    //ã€€æµ‹è¯•æ–¹æ³•
     public static void testBasket() {
-        // ½¨Á¢Ò»¸ö×°Æ»¹ûµÄÀº×Ó
+        // å»ºç«‹ä¸€ä¸ªè£…è‹¹æœçš„ç¯®å­
         final Basket basket = new Basket();
-        // ¶¨ÒåÆ»¹ûÉú²úÕß
+        // å®šä¹‰è‹¹æœç”Ÿäº§è€…
         class Producer implements Runnable {
             @Override
             public void run() {
                 try {
                     while (true) {
-                        // Éú²úÆ»¹û
-                        System.out.println("Éú²úÕß×¼±¸Éú²úÆ»¹û£º"
+                        // ç”Ÿäº§è‹¹æœ
+                        System.out.println("ç”Ÿäº§è€…å‡†å¤‡ç”Ÿäº§è‹¹æœï¼š"
                                 + System.currentTimeMillis());
                         basket.produce();
-                        System.out.println("Éú²úÕßÉú²úÆ»¹ûÍê±Ï£º"
+                        System.out.println("ç”Ÿäº§è€…ç”Ÿäº§è‹¹æœå®Œæ¯•ï¼š"
                                 + System.currentTimeMillis());
-                        System.out.println("Éú²úÍêºóÓĞÆ»¹û£º"+basket.getAppleNumber()+"¸ö");
-                        // ĞİÃß300ms
+                        System.out.println("ç”Ÿäº§å®Œåæœ‰è‹¹æœï¼š"+basket.getAppleNumber()+"ä¸ª");
+                        // ä¼‘çœ 300ms
                         Thread.sleep(300);
                     }
                 } catch (InterruptedException ex) {
                 }
             }
         }
-        // ¶¨ÒåÆ»¹ûÏû·ÑÕß
+        // å®šä¹‰è‹¹æœæ¶ˆè´¹è€…
         class Consumer implements Runnable {
             @Override
             public void run() {
                 try {
                     while (true) {
-                        // Ïû·ÑÆ»¹û
-                        System.out.println("Ïû·ÑÕß×¼±¸Ïû·ÑÆ»¹û£º"
+                        // æ¶ˆè´¹è‹¹æœ
+                        System.out.println("æ¶ˆè´¹è€…å‡†å¤‡æ¶ˆè´¹è‹¹æœï¼š"
                                 + System.currentTimeMillis());
                         basket.consume();
-                        System.out.println("Ïû·ÑÕßÏû·ÑÆ»¹ûÍê±Ï£º"
+                        System.out.println("æ¶ˆè´¹è€…æ¶ˆè´¹è‹¹æœå®Œæ¯•ï¼š"
                                 + System.currentTimeMillis());
-                        System.out.println("Ïû·ÑÍêºóÓĞÆ»¹û£º"+basket.getAppleNumber()+"¸ö");
-                        // ĞİÃß1000ms
+                        System.out.println("æ¶ˆè´¹å®Œåæœ‰è‹¹æœï¼š"+basket.getAppleNumber()+"ä¸ª");
+                        // ä¼‘çœ 1000ms
                         Thread.sleep(1000);
                     }
                 } catch (InterruptedException ex) {
@@ -81,7 +81,7 @@ public class BlockingQueueTest {
         Consumer consumer = new Consumer();
         service.submit(producer);
         service.submit(consumer);
-        // ³ÌĞòÔËĞĞ10sºó£¬ËùÓĞÈÎÎñÍ£Ö¹
+        // ç¨‹åºè¿è¡Œ10såï¼Œæ‰€æœ‰ä»»åŠ¡åœæ­¢
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
