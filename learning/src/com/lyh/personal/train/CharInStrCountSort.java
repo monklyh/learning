@@ -21,8 +21,8 @@ public class CharInStrCountSort {
 
 
     /**
-     * 时间复杂度：O(n)
-     * 空间复杂度：O(1)
+     * 鏃堕棿澶嶆潅搴︼細O(n)
+     * 绌洪棿澶嶆潅搴︼細O(1)
      * @param str
      */
     public static void countA(String str){
@@ -101,8 +101,8 @@ public class CharInStrCountSort {
     }
 
     /**
-     * 时间复杂度：O(n)
-     * 空间复杂度：O(1)
+     * 鏃堕棿澶嶆潅搴︼細O(n)
+     * 绌洪棿澶嶆潅搴︼細O(1)
      * @param str
      */
     public static void findMaxExist(String str){
@@ -144,8 +144,8 @@ public class CharInStrCountSort {
 
 
     /**
-     * 时间复杂度：O(n)
-     * 空间复杂度：O(1)
+     * 鏃堕棿澶嶆潅搴︼細O(n)
+     * 绌洪棿澶嶆潅搴︼細O(1)
      * @param str
      */
     public static void printStr(String str){

@@ -71,7 +71,7 @@ public class Main {
                 msCompare = "";
                 continue;
             }
-            // ¼ÙÉèÊı¾İ¶¼ÊÇÒ»ÃëÄÚµÄ
+            // å‡è®¾æ•°æ®éƒ½æ˜¯ä¸€ç§’å†…çš„
             /*String seondsTime = tempTime.substring(0, tempTime.lastIndexOf("."));
             if (!seondsTime.equals(secondsCompare)){
                 secondsCompare = seondsTime;

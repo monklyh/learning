@@ -19,7 +19,7 @@ public class TestHashMapResize {
             h = t;
         }
 
-        // Ä£Äâjdk1.7 HashMapÀ©ÈİÊ±µÄÍ·²å·¨
+        // æ¨¡æ‹Ÿjdk1.7 HashMapæ‰©å®¹æ—¶çš„å¤´æ’æ³•
         Node nh = ns[0];
         while (null != nh){
             Node next = nh.next;

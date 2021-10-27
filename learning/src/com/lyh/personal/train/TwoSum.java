@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * ÕÒ³öºÍÎªÄ³¸öÊıµÄÁ½¸ö¼ÓÊıµÄÎ»ÖÃ
+ * æ‰¾å‡ºå’Œä¸ºæŸä¸ªæ•°çš„ä¸¤ä¸ªåŠ æ•°çš„ä½ç½®
  */
 public class TwoSum {
 
