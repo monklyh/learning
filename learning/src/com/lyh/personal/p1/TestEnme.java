@@ -3,7 +3,7 @@ package com.lyh.personal.p1;
 public class TestEnme {
 
     public static  void main(String[] args){
-        // ²âÊÔÃ¶¾ÙÓÃ·¨£º¿ÉÒÔÓÃÃ¶¾ÙÀ´Ó³ÉäÒ»¶Ô¹ØÏµ
+        // æµ‹è¯•æšä¸¾ç”¨æ³•ï¼šå¯ä»¥ç”¨æšä¸¾æ¥æ˜ å°„ä¸€å¯¹å…³ç³»
         int code  = Codes.valueOf("Name").code;
         System.out.println("get code integer:"+code);
         System.out.println("F Str : " + F.valueOf("n").str);
