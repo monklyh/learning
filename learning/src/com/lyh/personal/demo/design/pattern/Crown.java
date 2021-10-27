@@ -4,7 +4,7 @@ public class Crown implements DressUP{
 
     @Override
     public String playerShow() {
-        // Íõ¹Ú
+        // çŽ‹å† 
         return "crown";
     }
 }

@@ -9,13 +9,14 @@ public class BodyTest {
 
     public static  void main(String[] args){
         Body b1 = new Body();
-        // ÒÔÏÂÊÇ²»ĞŞ¸ÄÆğÊ¼b1ÊµÀıÄÚÈİµÄÊµÏÖ·½Ê½
+        // ä»¥ä¸‹æ˜¯ä¸ä¿®æ”¹èµ·å§‹b1å®ä¾‹å†…å®¹çš„å®ç°æ–¹å¼
         b1 = new ChildAge(b1).growUp();
         b1 = new YongAge(b1).growUp();
 
-        // ÒÔÏÂÊÇĞŞ¸ÄÆğÊ¼b1ÊµÀıÄÚÈİµÄÊµÏÖ·½Ê½
+        // ä»¥ä¸‹æ˜¯ä¿®æ”¹èµ·å§‹b1å®ä¾‹å†…å®¹çš„å®ç°æ–¹å¼
         b1 = new Sock().wear(b1);
         b1 = new TShirt().wear(b1);
+
 
     }
 }

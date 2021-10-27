@@ -4,7 +4,7 @@ public class Sword implements Weapon {
 
     @Override
     public String weaponShow() {
-        // ´ó±¦½£
+        // å®å‰‘
         return "big sword";
     }
 }

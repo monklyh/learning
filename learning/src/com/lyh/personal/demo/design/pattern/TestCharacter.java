@@ -12,7 +12,7 @@ public class TestCharacter {
         System.out.println("---------------------------------------");
         jack.display();
         System.out.println("-------------@@@@@@@@@@@@@--------------");
-        // ½»»»ÁËÎäÆ÷
+        // äº¤æ¢äº†æ­¦å™¨
         Weapon tempW = jack.getEquipment().getWaepon();
         jack.getEquipment().setWaepon(king.getEquipment().getWaepon());
         king.getEquipment().setWaepon(tempW);

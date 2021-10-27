@@ -1,7 +1,7 @@
 package com.lyh.personal.demo.design.decorator.compoent.coffee;
 
 /**
- *  »ùÀà£¬×îÄÚÒ»²ã¡£
+ *  åŸºç±»ï¼Œæœ€å†…ä¸€å±‚ã€‚
  */
 public  abstract  class Beverage  {
 

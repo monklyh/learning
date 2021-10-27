@@ -10,12 +10,12 @@ public class TestDuplicateNumbers {
     }
 
     /**
-     * ÌâÄ¿£ºÔÚÒ»¸ö³¤¶ÈÎª n µÄÊý×éÀïµÄËùÓÐÊý×Ö¶¼ÔÚ 0 µ½ n-1 µÄ·¶Î§ÄÚ¡£
-     * Êý×éÖÐÄ³Ð©Êý×ÖÊÇÖØ¸´µÄ£¬µ«²»ÖªµÀÓÐ¼¸¸öÊý×ÖÊÇÖØ¸´µÄ£¬Ò²²»ÖªµÀÃ¿¸öÊý×ÖÖØ¸´¼¸´Î¡£
-     * ÇëÕÒ³öÊý×éÖÐÈÎÒâÒ»¸öÖØ¸´µÄÊý×Ö¡£
+     * é¢˜ç›®ï¼šåœ¨ä¸€ä¸ªé•¿åº¦ä¸º n çš„æ•°ç»„é‡Œçš„æ‰€æœ‰æ•°å­—éƒ½åœ¨ 0 åˆ° n-1 çš„èŒƒå›´å†…ã€‚
+     * æ•°ç»„ä¸­æŸäº›æ•°å­—æ˜¯é‡å¤çš„ï¼Œä½†ä¸çŸ¥é“æœ‰å‡ ä¸ªæ•°å­—æ˜¯é‡å¤çš„ï¼Œä¹Ÿä¸çŸ¥é“æ¯ä¸ªæ•°å­—é‡å¤å‡ æ¬¡ã€‚
+     * è¯·æ‰¾å‡ºæ•°ç»„ä¸­ä»»æ„ä¸€ä¸ªé‡å¤çš„æ•°å­—ã€‚
      *
-     * ½âÌâË¼Â·£ºÒªÇóÊ±¼ä¸´ÔÓ¶È O(N)£¬¿Õ¼ä¸´ÔÓ¶È O(1)¡£Òò´Ë²»ÄÜÊ¹ÓÃÅÅÐòµÄ·½·¨£¬Ò²²»ÄÜÊ¹ÓÃ¶îÍâµÄ±ê¼ÇÊý×é¡£
-     * ¶ÔÓÚÕâÖÖÊý×éÔªËØÔÚ [0, n-1] ·¶Î§ÄÚµÄÎÊÌâ£¬¿ÉÒÔ½«ÖµÎª i µÄÔªËØµ÷Õûµ½µÚ i ¸öÎ»ÖÃÉÏ½øÐÐÇó½â¡£
+     * è§£é¢˜æ€è·¯ï¼šè¦æ±‚æ—¶é—´å¤æ‚åº¦ O(N)ï¼Œç©ºé—´å¤æ‚åº¦ O(1)ã€‚å› æ­¤ä¸èƒ½ä½¿ç”¨æŽ’åºçš„æ–¹æ³•ï¼Œä¹Ÿä¸èƒ½ä½¿ç”¨é¢å¤–çš„æ ‡è®°æ•°ç»„ã€‚
+     * å¯¹äºŽè¿™ç§æ•°ç»„å…ƒç´ åœ¨ [0, n-1] èŒƒå›´å†…çš„é—®é¢˜ï¼Œå¯ä»¥å°†å€¼ä¸º i çš„å…ƒç´ è°ƒæ•´åˆ°ç¬¬ i ä¸ªä½ç½®ä¸Šè¿›è¡Œæ±‚è§£ã€‚
      * @param a
      */
     public static void test(int[] a){
@@ -25,8 +25,8 @@ public class TestDuplicateNumbers {
 
         int i = 0;
         while (true){
-            //  Èç¹ûÖµÓëÏÂ±ê²»ÏàµÈ£¬Ôò½«Öµ·ÅÔÚÏàµÈµÄÏÂ±êµØÖ·ÖÐ
-            // tempÊÇÖµÏÂ±êµØÖ·µÄ¾ÉÖµ
+            //  ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Â±ê²»ï¿½ï¿½È£ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Èµï¿½ï¿½Â±ï¿½ï¿½Ö·ï¿½ï¿½
+            // tempï¿½ï¿½Öµï¿½Â±ï¿½ï¿½Ö·ï¿½Ä¾ï¿½Öµ
             int v = a[i], temp = a[v];
             if (v != i){
                 if (v == temp){
@@ -34,7 +34,7 @@ public class TestDuplicateNumbers {
                     return;
                 }
                 a[v] = v;
-                // ÏÈ½«¾ÉÖµÔÝÊ±´æ·ÅÔÚiµØÖ·ÏÂ£¬µÈ´ýÏÂ´ÎÅÐ¶Ï
+                // ï¿½È½ï¿½ï¿½ï¿½Öµï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½ï¿½Ö·ï¿½Â£ï¿½ï¿½È´ï¿½ï¿½Â´ï¿½ï¿½Ð¶ï¿½
                 a[i] = temp;
             }else if (size == ++i){return;}
 
